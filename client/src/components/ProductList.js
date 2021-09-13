@@ -6,7 +6,7 @@ import Badge from "react-bootstrap";
 const ProductList = (props) => {
   const { products } = props.context;
 
-  return (
+  return ( 
     <>
       <div className="hero is-primary">
         <div className="hero-body container">

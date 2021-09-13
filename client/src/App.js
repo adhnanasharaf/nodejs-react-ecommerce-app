@@ -128,7 +128,7 @@ export default class App extends Component {
   }
 
   async componentDidMount() {
-    const api = await axios.get("http://localhost:3001/api");
+    const api = await axios.get("/api");
     console.log(api)
     let user = localStorage.getItem("user");
     let cart = localStorage.getItem("cart");
@@ -136,8 +136,8 @@ export default class App extends Component {
     console.log(admin)
  console.log(user)
 
-   const products = await axios.get("http://localhost:3001/products");
-   console.log(products.data.products)
+   const products = await axios.get("/products");
+   console.log(products.data.products)  
 
     user = user ? JSON.parse(user) : null;
     cart = cart ? JSON.parse(cart) : [];
@@ -156,7 +156,7 @@ export default class App extends Component {
   } 
   login = async (email, password) => {
     const res = await axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("/login", { email, password })
       .catch((res) => {
         
         return { status: 404, message: "unauthorised user" };
@@ -260,7 +260,7 @@ this.setState(cart);
 AddProducts = (id,product) => {
   console.log(id,product)
   const sentToBackend =  axios
-      .post("http://localhost:3001/addproducts", {id,product }).then((res)=>{
+      .post("/addproducts", {id,product }).then((res)=>{
   console.log(res.data)
       })
 

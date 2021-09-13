@@ -63,7 +63,7 @@ class AddProducts extends Component {
 
     return (
       <>
-        <Button>show all products</Button>
+        
         <h4> Add Products </h4>
         <Form onSubmit={this.save}>
           <Form.Group controlId="formBasicEmail">
